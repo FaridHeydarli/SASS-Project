@@ -1,0 +1,75 @@
+.container {
+    max-width: $container-width;
+    margin: 0px auto;
+    @extend .justify-content-between;
+    @extend .align-items-center;
+}
+
+.container-full {
+    width: 100%;
+    height: inherit;
+}
+
+.row {
+    @extend .flex;
+    @extend .justify-content-between;
+    @extend .align-items-center;
+    
+}
+
+.column {
+    @extend .flex;
+    @extend .flex-column;
+    @extend .justify-content-center;
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width: calc((100% / 12)*#{$i});
+    }
+}
+
+@media (max-width:$breakpoint-sm) {
+    .container {
+        width: 100%;
+    }
+    @for $i from 1 through 12 {
+        .col-xs-#{$i} {
+            width: calc((100% / 12)*#{$i});
+            // width: $container-width/12*1
+        }
+    }
+}
+
+@media (min-width:$breakpoint-sm) and (max-width:$breakpoint-md) {
+    .container {
+        width: 100%;
+    }
+    @for $i from 1 through 12 {
+        .col-sm-#{$i} {
+            width: calc((100% / 12)*#{$i});
+            // width: $container-width/12*1
+        }
+    }
+}
+
+@media (min-width:$breakpoint-md) and (max-width:$breakpoint-lg) {
+    .container {
+        width: 100%;
+    }
+    @for $i from 1 through 12 {
+        .col-md-#{$i} {
+            width: calc((100% / 12)*#{$i});
+            // width: $container-width/12*1
+        }
+    }
+}
+
+@media (min-width:$breakpoint-lg) {
+    @for $i from 1 through 12 {
+        .col-lg-#{$i} {
+            width: calc((100% / 12)*#{$i});
+            // width: $container-width/12*1
+        }
+    }
+}
